@@ -13,10 +13,14 @@ $.ajax({
     console.log(response[0].AddressInfo.Longitude)
 });
 
-$('#option').on("click", function (event) {
-    event.preventDefault();
-    console.log($(this).val().substring(0, 2));
+$('#option').on("change", function (event) {
+    // event.preventDefault();
+    // $(document).on("click", function() {
+console.log($("#option").val());
+console.log($(this).val().substring(0, 2));
+
 });
+
 
 
 
