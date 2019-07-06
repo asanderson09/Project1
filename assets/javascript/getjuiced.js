@@ -1,4 +1,5 @@
 
+
 var queryURL = "http://api.openchargemap.io/v3/poi/?output=json&countrycode=US&maxresults=10";
 $.ajax({
     url: queryURL,
@@ -6,6 +7,22 @@ $.ajax({
 }).then(function (response) {
     console.log(response);
     console.log(response[0].AddressInfo.Latitude)
+
+     
+     lat= 37.5780673;
+     long=-77.5359137;
+     
+     
+     var queryURL = "http://api.openchargemap.io/v3/poi/?output=json&latitude="+lat+"&longitude="+long+"&distance=5&distanceunit=miles&maxresults=15";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
+            console.log(response[0].AddressInfo.Latitude)
+        
+    });
+
 
 });
 
@@ -21,13 +38,13 @@ $.ajax({
 });
 
 function initMap() {
-    var location = { lat: -25.363, lng: 131.044 };
+    var location = { lat: 37.5780673, lng: -77.5359137 };
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4,
         center: location
     });
 }
-// initMap();
+
 
 
 
