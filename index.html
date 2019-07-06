@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GetJuiced!!!</title>
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqGzyDwZXtg3v10ZpY4cPVRyHDVHU7T0w&callback=initMap">
+        </script>
 </head>
 
 <body>
-        
+
     <div class="header text-center m-2 rounded bg-secondary p-5 h1">Get Juiced</div>
     <div class="container">
         <div class="row">
@@ -32,14 +41,28 @@
             </div>
             <div class="col-md-8">
                 <div class=" jumbotron bg-warning mt-5 mr-2 ml-2">
+                    <div id="map"></div>
                 </div>
+
             </div>
         </div>
         <div class="row">
             <div class="jumbotron bg-danger mt-5 w-100"></div>
         </div>
     </div>
-    
+
+
+    <script>
+        function initMap() {
+            var location = { lat: -25.363, lng: 131.044 };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: location
+            });
+        }
+        initMap();
+    </script>
+
     <script src="assets/javascript/getjuiced.js"></script>
 </body>
 
