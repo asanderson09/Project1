@@ -2,6 +2,7 @@
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
+
     } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
@@ -33,10 +34,11 @@ function showPosition(position) {
             console.log(response[0].AddressInfo.Longitude)
         });
 
-
+    initMap(lat,long);
     });
+    
 };
-var town = "";
+var town = "Richmond";
 
 var queryURL = "https://en.wikipedia.org/w/api.php?format=json&origin=*&action=query&prop=extracts&explaintext=1&titles=" + town;
 $.ajax({
@@ -48,14 +50,18 @@ $.ajax({
 
 });
 
-function initMap() {
-    var location = { lat: 37.5780673, lng: -77.5359137 };
+function initMap(lat, long) {
+    var location = { lat: lat, lng: long };
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
+        zoom: 10,
         center: location
     });
 }
 
-getLocation();
-initMap();
+$(document).ready(function(){
+    getLocation();
+
+});
+
+
 
