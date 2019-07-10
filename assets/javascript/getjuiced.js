@@ -24,7 +24,7 @@ function showPosition(position) {
 
 
 
-        var queryURL = "http://api.openchargemap.io/v3/poi/?output=json&latitude=" + lat + "&longitude=" + long + "&distance=" + range + "&distanceunit=miles&maxresults=30";
+        var queryURL = "https://api.openchargemap.io/v3/poi/?output=json&latitude=" + lat + "&longitude=" + long + "&distance=" + range + "&distanceunit=miles&maxresults=30";
         $.ajax({
             url: queryURL,
             method: "GET"
