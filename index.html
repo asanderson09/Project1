@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,38 +13,36 @@
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href='assets/css/style.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    
 </head>
-
-<body>
-    <div class="header text-center m-2 rounded bg-secondary p-5 h1">Get Juiced</div>
+<body class = 'bg-image'>
+    <div id = "title" class="header text-center m-2 rounded p-5 h1">Get Juiced</div>
     <div class="container">
         <div class="row">
             <div class=" col-md-4">
                 <div class="dropdown mt-5">
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Select Your Milage Range</label>
+                        <label for="exampleFormControlSelect1">Select Range (Miles)</label>
                         <select class="form-control" id='option'>
-                            <option>Select Range(Miles)</option>
+                            <option></option>
                             <option data="5">5 </option>
                             <option data="10">10 </option>
                             <option data="15">15 </option>
                             <option data="20">20 </option>
-                            <option data="30">30 </option>
-                            <option data="50">50 </option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="col-md-8">
-                <div class=" jumbotron bg-warning mt-5 mr-2 ml-2">
+                <div class=" jumbotron" id = 'trans-bg'>
                     <div id="map"></div>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="jumbotron bg-danger mt-5 w-100"></div>
+            <div id = 'invis' class="jumbotron"></div>
         </div>
     </div>
     <script async defer
@@ -53,5 +50,4 @@
         </script>
     <script src="assets/javascript/getjuiced.js"></script>
 </body>
-
 </html>
