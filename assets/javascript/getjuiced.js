@@ -46,7 +46,6 @@ function showPosition(position) {
 
 
 function addMarker(data) {
-    var InforObj = [];
     for (var i = 0; i < data.length; i++) {
         var contentString = "<div id='content'><h5>" + data[i].AddressInfo.Title + "</h5><p>" + data[i].AddressInfo.AddressLine1 + "<br>" + data[i].AddressInfo.Town + "<br>" + data[i].AddressInfo.StateOrProvince + "</p></div>";
         var pos = new google.maps.LatLng(data[i].AddressInfo.Latitude, data[i].AddressInfo.Longitude)
@@ -61,11 +60,9 @@ function addMarker(data) {
         });
 
         marker.addListener('click', function () {
-            //closeOtherInfo();
             infowindow.open(marker.get('map'), marker);
-            InforObj[i] = infowindow;
-             town2 = InforObj[i].data[i].AddressInfo.Town ;
-             state2 = InforObj[i].data[i].AddressInfo.StateOrProvince;
+             town2 = data[i].AddressInfo.Town ;
+             state2 = data[i].AddressInfo.StateOrProvince;
             snip(town2, state2);
         });
     };
